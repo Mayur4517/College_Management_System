@@ -1,0 +1,502 @@
+/* General Styles */
+body {
+  background-color: #E8ECEF; /* Light grey background */
+  font-family: 'Poppins', sans-serif; /* Updated font */
+  color: #333; /* Darker text color for readability */
+}
+
+/* Card Styles */
+.animated-card {
+  border-radius: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* List Group Items */
+.list-group-item {
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+/* Button Styles */
+.btn-gradient {
+  background: linear-gradient(to right, #6a11cb, #2575fc); /* Gradient button */
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  padding: 12px;
+  font-size: 1.1rem;
+  transition: background 0.3s ease, transform 0.2s ease-in-out;
+}
+
+.btn-gradient:hover {
+  background: linear-gradient(to right, #2575fc, #6a11cb);
+  transform: scale(1.05);
+}
+
+/* Dashboard Styles */
+.card {
+  border-radius: 15px;
+}
+
+/* List Group Item Styles */
+.list-group-item {
+  border-radius: 10px;
+  transition: background 0.3s ease;
+}
+
+.list-group-item:hover {
+  background: rgba(0, 0, 0, 0.1); /* Subtle hover effect */
+}
+
+/* Button Styles */
+.btn-gradient {
+  background: linear-gradient(to right, #6a11cb, #2575fc); /* Gradient button */
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  padding: 12px 20px;
+  font-size: 1.1rem;
+  transition: background 0.3s ease, transform 0.2s ease-in-out;
+}
+
+.btn-gradient:hover {
+  background: linear-gradient(to right, #2575fc, #6a11cb);
+  transform: scale(1.05);
+}
+
+/* Dashboard Enhancements */
+h1 {
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+/* List Group Item Styles */
+.list-group-item {
+  border-radius: 10px;
+  transition: background 0.3s ease;
+  font-size: 1.1rem; /* Slightly larger font */
+}
+
+.list-group-item:hover {
+  background: rgba(38, 117, 252, 0.1); /* Soft blue on hover */
+}
+
+/* Button Styles */
+.btn-gradient {
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  padding: 12px 20px;
+  font-size: 1.1rem;
+  transition: background 0.3s ease, transform 0.2s ease-in-out;
+}
+
+.btn-gradient:hover {
+  background: linear-gradient(to right, #2575fc, #6a11cb);
+  transform: scale(1.05);
+}
+
+/* Navbar Styles */
+.gradient-navbar {
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+}
+
+/* General Button Styling */
+.btn {
+  border-radius: 30px;
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  transition: background 0.3s ease, transform 0.2s ease-in-out;
+}
+
+/* Edit Button Style */
+.btn-edit {
+  background-color: #6a11cb;
+  color: #fff;
+  border: none;
+}
+
+.btn-edit:hover {
+  background-color: #5a10a5;
+  transform: scale(1.05);
+}
+
+/* Delete Button Style */
+.btn-delete {
+  background-color: #c60212;
+  color: #fff;
+  border: none;
+}
+
+.btn-delete:hover {
+  background-color: #e14d5b;
+  transform: scale(1.05);
+}
+
+/* Card Styling for the Table */
+.card {
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card-body {
+  padding: 20px;
+}
+
+/* Table Styling */
+.table-hover tbody tr:hover {
+  background-color: rgba(106, 17, 203, 0.1);
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: #f9f9f9;
+}
+
+/* Gradient button */
+.btn-gradient {
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  font-size: 1.1rem;
+  border-radius: 30px;
+  transition: background 0.3s ease, transform 0.2s ease-in-out;
+}
+
+.btn-gradient:hover {
+  background: linear-gradient(to right, #2575fc, #6a11cb);
+  transform: scale(1.05);
+}
+
+.gradient-text {
+  background: linear-gradient(45deg, #ff7f50, #ff1493); /* Coral to Deep Pink */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 2.5rem; /* Larger font size for emphasis */
+}
+
+.animated-card {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.creative-card {
+  background-color: #fdfdfd; /* Light background for card */
+  border-radius: 15px; /* Rounded corners */
+  border: 1px solid #e0e0e0; /* Subtle border */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  padding: 20px; /* Padding inside the card */
+}
+
+.btn-success {
+  background-color: #3d60eb; /* Success button color */
+  border: none;
+}
+
+.btn-success:hover {
+  background-color: #6668f0; /* Darker green on hover */
+}
+
+.form-control {
+  border: 1px solid #d1d1d1; /* Subtle border */
+  border-radius: 8px; /* Rounded corners for input */
+  padding: 10px; /* Padding inside input */
+}
+
+.form-control:focus {
+  border-color: #acca33; /* Highlight color on focus */
+  box-shadow: 0 0 5px rgba(255, 20, 147, 0.5); /* Focus shadow */
+}
+.gradient-text {
+  background: linear-gradient(45deg, #6a5acd, #ff69b4); /* SlateBlue to HotPink */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 2.5rem; /* Larger font size for emphasis */
+}
+
+.animated-card {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.creative-card {
+  background-color: #ffffff; /* Light background for card */
+  border-radius: 15px; /* Rounded corners */
+  border: 1px solid #e0e0e0; /* Subtle border */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  padding: 20px; /* Padding inside the card */
+}
+
+.table {
+  margin-top: 20px; /* Space above the table */
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: #f9f9f9; /* Light gray for odd rows */
+}
+
+.table-hover tbody tr:hover {
+  background-color: #ffebcd; /* Light color on hover */
+  transition: background-color 0.3s; /* Smooth transition */
+}
+
+.thead-dark th {
+  background-color: #343a40; /* Dark header background */
+  color: white; /* White text color */
+}
+
+.btn-primary {
+  background-color: #007bff; /* Primary button color */
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+.gradient-text {
+  background: linear-gradient(45deg, #6a5acd, #ff69b4); /* SlateBlue to HotPink */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 2.5rem; /* Larger font size for emphasis */
+}
+
+.animated-card {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.creative-card {
+  background-color: #ffffff; /* Light background for card */
+  border-radius: 15px; /* Rounded corners */
+  border: 1px solid #e0e0e0; /* Subtle border */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  padding: 20px; /* Padding inside the card */
+}
+
+.table {
+  margin-top: 20px; /* Space above the table */
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: #f9f9f9; /* Light gray for odd rows */
+}
+
+.table-hover tbody tr:hover {
+  background-color: #ffebcd; /* Light color on hover */
+  transition: background-color 0.3s; /* Smooth transition */
+}
+
+.thead-dark th {
+  background-color: #343a40; /* Dark header background */
+  color: white; /* White text color */
+}
+
+.btn-primary {
+  background-color: #007bff; /* Primary button color */
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+.gradient-text {
+  background: linear-gradient(45deg, #6a5acd, #ff69b4); /* SlateBlue to HotPink */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 2.5rem; /* Larger font size for emphasis */
+}
+
+.animated-card {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.creative-card {
+  background-color: #ffffff; /* Light background for card */
+  border-radius: 15px; /* Rounded corners */
+  border: 1px solid #e0e0e0; /* Subtle border */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  padding: 20px; /* Padding inside the card */
+}
+
+.table {
+  margin-top: 20px; /* Space above the table */
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: #f9f9f9; /* Light gray for odd rows */
+}
+
+.table-hover tbody tr:hover {
+  background-color: #ffebcd; /* Light color on hover */
+  transition: background-color 0.3s; /* Smooth transition */
+}
+
+.thead-dark th {
+  background-color: #343a40; /* Dark header background */
+  color: white; /* White text color */
+}
+
+.btn-primary {
+  background-color: #007bff; /* Primary button color */
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+.btn-outline-warning, .btn-outline-danger {
+  border-radius: 20px; /* Rounded buttons */
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-outline-warning:hover {
+  background-color: #25bcdb; /* Light yellow on hover */
+}
+
+.btn-outline-danger:hover {
+  background-color: #ff6b6b; /* Light red on hover */
+}
+
+.creative-card {
+  animation: fadeInUp 0.5s;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.btn-creative {
+  background: linear-gradient(45deg, #6ab04c, #1dd1a1);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn-creative:hover {
+  background: linear-gradient(45deg, #1dd1a1, #6ab04c);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.3);
+}
+
+.btn-creative:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+.btn-warning {
+  background-color: #ffc107; /* Bootstrap warning color */
+  color: white;
+  border-radius: 5px;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn-warning:hover {
+  background-color: #e0a800; /* Darker shade for hover */
+  transform: translateY(-2px);
+}
+
+.btn-danger {
+  background-color: #dc3545; /* Bootstrap danger color */
+  color: white;
+  border-radius: 5px;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn-danger:hover {
+  background-color: #c82333; /* Darker shade for hover */
+  transform: translateY(-2px);
+}
+
+.btn-warning {
+  background-color: #ffc107; /* Bootstrap warning color */
+  color: white;
+  border-radius: 5px;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn-warning:hover {
+  background-color: #e0a800; /* Darker shade for hover */
+  transform: translateY(-2px);
+}
+
+.btn-danger {
+  background-color: #dc3545; /* Bootstrap danger color */
+  color: white;
+  border-radius: 5px;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn-danger:hover {
+  background-color: #c82333; /* Darker shade for hover */
+  transform: translateY(-2px);
+}
+
+.btn-warning {
+  background-color: #ffc107; /* Bootstrap warning color */
+  color: white;
+  border-radius: 5px;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn-warning:hover {
+  background-color: #e0a800; /* Darker shade for hover */
+  transform: translateY(-2px);
+}
+
+.btn-danger {
+  background-color: #dc3545; /* Bootstrap danger color */
+  color: white;
+  border-radius: 5px;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn-danger:hover {
+  background-color: #c82333; /* Darker shade for hover */
+  transform: translateY(-2px);
+}

@@ -1,0 +1,67 @@
+<%- include('partials/header') %>
+
+<!-- Full-Screen Navigation Bar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" href="#">
+      Student Portal  
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/student">Dashboard</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/enrollCourses">Enroll in Courses</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/examSchedule">Exam Schedule</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/marks">View Grades</a>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container mt-5">
+  <h1 class="text-center">Enroll in Courses</h1>
+
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card shadow-lg border-0 animated-card creative-card">
+        <div class="card-body">
+          <form action="/enrollCourses" method="POST">
+            <div class="form-group">
+              <label for="course" class="font-weight-bold">Available Courses</label>
+              <select id="course" name="course" class="form-control" required>
+                <option value="">Select a course</option>
+                <% courses.forEach(course => { %>
+                  <option value="<%= course.course_id %>"><%= course.course_name %></option>
+                <% }); %>
+              </select>
+            </div>
+
+            <div class="text-center">
+              <button type="submit" class="btn btn-success btn-block">Enroll</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>body {
+  background-color: #e6f7ff; /* Light Blue Background */
+  font-family: 'Arial', sans-serif; /* Font Style */
+  color: #333;
+}
+</style>
+<%- include('partials/footer') %>

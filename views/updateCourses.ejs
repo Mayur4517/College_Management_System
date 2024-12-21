@@ -1,0 +1,23 @@
+
+<%- include('partials/header') %>
+
+<div class="container mt-5">
+  <h1>Update Course</h1>
+
+  <form action="/updateCourse/<%= currentCourse.course_id %>" method="POST">
+    <div class="form-group">
+      <label for="course">Select New Course</label>
+      <select id="course" name="course" class="form-control" required>
+        <% courses.forEach(course => { %>
+          <option value="<%= course.course_id %>" <%= course.course_id === currentCourse.course_id ? 'selected' : '' %>><%= course.course_name %></option>
+        <% }); %>
+      </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Update Course</button>
+  </form>
+
+  <a href="/enrolledCourses" class="btn btn-secondary mt-3">Back to Enrolled Courses</a>
+</div>
+
+<%- include('partials/footer') %>

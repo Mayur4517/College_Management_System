@@ -1,0 +1,93 @@
+<%- include('partials/header') %>
+
+<!-- Full-Screen Navigation Bar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" href="#">Admin Portal</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/admin">Dashboard</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/viewUsers">Manage Users</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/viewCourses">Manage Courses</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/manageDepartments">Manage Departments</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/login">Logout
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container mt-5">
+  <h1 class="text-center">All Departments</h1>
+
+  <div class="row justify-content-center">
+    <div class="col-md-10">
+      <div class="card shadow-lg border-0 animated-card creative-card">
+        <div class="card-body text-center">
+          <a href="/addDepartment" class="btn btn-creative mb-3">Add Department</a>
+          <p class="mb-4">View, update, or delete departments from the system.</p>
+
+          <div class="table-responsive text-nowrap">
+            <table class="table table-bordered table-hover">
+              <thead>
+                <tr>
+                  <th>Department ID</th>
+                  <th>Department Name</th>
+                  <th>Head Email</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody class="table-border-bottom-0">
+                <% departments.forEach(department => { %>
+                  <tr>
+                    <td><i class="ri-building-line ri-22px text-info me-4"></i><%= department.department_id %></td>
+                    <td><%= department.department_name %></td>
+                    <td><%= department.head_email %></td>
+                    <td>
+                      <div class="d-flex justify-content-start">
+                        <!-- Update Button with Icon -->
+                        <a href="/updateDepartment?id=<%= department.department_id %>" class="btn btn-sm btn-warning me-2">
+                          <i class="ri-pencil-line me-1"></i> Update
+                        </a>
+                        <!-- Delete Button with Icon -->
+                        <a href="/deleteDepartment?id=<%= department.department_id %>" class="btn btn-sm btn-danger">
+                          <i class="ri-delete-bin-6-line me-1"></i> Delete
+                        </a>
+                      </div>
+                    </td>
+                  </tr>
+                <% }); %>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <a href="/admin" class="btn btn-primary mt-3">Back to Dashboard</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+ body {
+    background-color: #e6f7ff; /* Light Blue Background */
+    font-family: 'Arial', sans-serif; /* Font Style */
+    color: #333;
+  }
+
+</style>
+
+<%- include('partials/footer') %>

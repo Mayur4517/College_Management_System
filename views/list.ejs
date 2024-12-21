@@ -1,0 +1,124 @@
+<%- include('partials/header') %>
+
+<!-- Full-Screen Navigation Bar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link text-light" href="/register">
+            <i class="fas fa-user-plus"></i> Register
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-light" href="/login">
+            <i class="fas fa-sign-in-alt"></i> Login
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container mt-5">
+  <h1 class="text-center gradient-text display-4">Welcome to IIITN!</h1>
+  <p class="text-center lead">Please login or register to access our exclusive features.</p>
+
+  <div class="row justify-content-center mt-4">
+    <div class="col-md-8">
+      <div class="card shadow-lg border-0 animated-card">
+        <div class="card-body text-center p-5">
+          
+          <div class="list-group mt-4">
+            <a href="/register" class="list-group-item list-group-item-action creative-button register-btn">
+              <h5 class="mb-1"><i class="fas fa-user-plus"></i> Register</h5>
+              <p class="mb-1">New to our platform? Register now and unlock all features.</p>
+            </a>
+            <a href="/login" class="list-group-item list-group-item-action creative-button login-btn">
+              <h5 class="mb-1"><i class="fas fa-sign-in-alt"></i> Login</h5>
+              <p class="mb-1">Already have an account? Login to continue exploring.</p>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%- include('partials/footer') %>
+
+<!-- Custom Styles for Creativity -->
+<style>
+  body {
+    background-color: #e6f7ff; /* Light Blue Background */
+    font-family: 'Arial', sans-serif; /* Font Style */
+    color: #333;
+  }
+
+  .gradient-text {
+    background: linear-gradient(90deg, #6a5acd, #00bfff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .animated-card {
+    animation: fadeInUp 0.7s ease-out;
+    border-radius: 15px;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translate3d(0, 20px, 0);
+    }
+    to {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  .creative-button {
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    background-color: #f8f9fa;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .register-btn {
+    background: linear-gradient(45deg, #32cd32, #6ab04c);
+    color: white;
+  }
+
+  .login-btn {
+    background: linear-gradient(45deg, #1e90ff, #00bfff);
+    color: white;
+  }
+
+  .creative-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    opacity: 0.9;
+  }
+
+  .creative-button h5 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .creative-button h5 i {
+    margin-right: 10px;
+  }
+
+  .lead {
+    font-size: 1.25rem;
+    color: #6c757d;
+  }
+</style>

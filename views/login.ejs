@@ -1,0 +1,121 @@
+<%- include('partials/header') %>
+
+</nav>
+
+<div class="container mt-5">
+  <h1 class="text-center gradient-text">Login</h1>
+
+  <div class="row justify-content-center mt-4">
+    <div class="col-sm-8 col-md-6">
+      <div class="card shadow-lg border-0 animated-card">
+        <div class="card-body p-5">
+          <form action="/login" method="POST" id="loginForm">
+            <div class="form-group mb-4">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" class="form-control shadow-sm" name="username" placeholder="Enter your email" id="email" required>
+              <small class="form-text text-danger d-none" id="emailError">Please enter a valid email address.</small>
+            </div>
+            <div class="form-group mb-4">
+              <label for="password" class="form-label">Password</label>
+              <input type="password" class="form-control shadow-sm" name="password" placeholder="Enter your password" id="password" required>
+              <small class="form-text text-danger d-none" id="passwordError">Password must be at least 6 characters long.</small>
+            </div>
+            <button type="submit" class="btn btn-gradient w-100">Login</button>
+          </form>
+
+          <!-- Register Button -->
+          <div class="text-center mt-4">
+            <p>Don't have an account?</p>
+            <a href="/register" class="btn btn-gradient btn-register">Register Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Custom CSS for the Register Button -->
+<style>
+  body {
+    background-color: #e6f7ff; /* Light Blue Background */
+    font-family: 'Arial', sans-serif; /* Font Style */
+    color: #333;
+  }
+
+  .btn-gradient {
+    background: linear-gradient(45deg, #6a5acd, #00bfff);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    font-weight: bold;
+  }
+
+  .btn-gradient:hover {
+    background: linear-gradient(45deg, #00bfff, #6a5acd);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
+  }
+
+  .btn-register {
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    border-radius: 30px;
+    display: inline-block;
+  }
+
+  .gradient-text {
+    background: linear-gradient(90deg, #6a5acd, #00bfff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .animated-card {
+    animation: fadeIn 0.5s ease-in-out;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+</style>
+
+<script>
+  document.getElementById('loginForm').addEventListener('submit', function(e) {
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+    let valid = true;
+    
+    if (!validateEmail(email)) {
+      document.getElementById('emailError').classList.remove('d-none');
+      valid = false;
+    } else {
+      document.getElementById('emailError').classList.add('d-none');
+    }
+
+    if (password.length < 6) {
+      document.getElementById('passwordError').classList.remove('d-none');
+      valid = false;
+    } else {
+      document.getElementById('passwordError').classList.add('d-none');
+    }
+
+    if (!valid) e.preventDefault();
+  });
+
+  function validateEmail(email) {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(String(email).toLowerCase());
+  }
+</script>
+
+<%- include('partials/footer') %>

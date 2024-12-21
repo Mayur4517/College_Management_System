@@ -1,0 +1,84 @@
+<%- include('partials/header') %>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" href="#">Faculty Portal</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/faculty">Dashboard</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/facultyMarks">Gradebook</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/enrollCoursesFaculty">Department Details</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="/assignedCourses">Course Assignments</a>
+        </li>
+        <li class="nav-item active"></li>
+          <a class="nav-link" href="/login">Logout</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container mt-5">
+  <h1 class="text-center gradient-text">Students Info</h1>
+
+  <div class="card shadow-lg border-0 mt-4">
+    <div class="card-body">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Student Email</th>
+            <th>Course Name</th>
+            <th>Marks Obtained</th>
+            <th>Update Marks</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% if (students && students.length > 0) { %>
+            <% students.forEach(student => { %>
+              <tr>
+                <td><%= student.student_email %></td>
+                <td><%= student.course_name %></td>
+                <td>
+                  <!-- Display current marks or default to 0 if no marks found -->
+                  <form action="/updateMarks" method="POST" style="display:inline;">
+                    <input type="hidden" name="course_id" value="<%= student.course_id %>" />
+                    <input type="hidden" name="student_email" value="<%= student.student_email %>" />
+                    <input type="number" name="marks_obtained" value="<%= student.marks_obtained || 0 %>" min="0" max="100" required class="form-control d-inline" style="width: auto; display: inline;" />
+                    <button type="submit" class="btn btn-gradient btn-sm">Update</button>
+                  </form>
+                </td>
+              </tr>
+            <% }); %>
+          <% } else { %>
+            <tr>
+              <td colspan="4" class="text-center">No students enrolled in your courses.</td>
+            </tr>
+          <% } %>
+        </tbody>
+      </table>
+
+      <div class="text-center mt-4">
+        <a href="/faculty" class="btn btn-gradient">Back to Faculty Dashboard</a>
+      </div>
+    </div>
+  </div>
+</div>
+<style>body {
+  background-color: #e6f7ff; /* Light Blue Background */
+  font-family: 'Arial', sans-serif; /* Font Style */
+  color: #333;
+}
+</style>
+
+<%- include('partials/footer') %>

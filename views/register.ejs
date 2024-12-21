@@ -1,0 +1,137 @@
+<%- include('partials/header') %>
+
+<div class="container mt-5">
+  <h1 class="text-center gradient-text">Create Your Account</h1>
+
+  <div class="row justify-content-center mt-4">
+    <div class="col-sm-8 col-md-6">
+      <div class="card shadow-lg border-0 animated-card">
+        <div class="card-body p-5">
+          <form action="/register" method="POST" id="registerForm">
+            <div class="form-group mb-4">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" class="form-control shadow-sm" name="username" id="email" placeholder="Enter your email" required>
+              <small class="form-text text-danger d-none" id="emailError">Please enter a valid email address.</small>
+            </div>
+            <div class="form-group mb-4">
+              <label for="password" class="form-label">Password</label>
+              <input type="password" class="form-control shadow-sm" name="password" id="password" placeholder="Enter your password" required>
+              <small class="form-text text-danger d-none" id="passwordError">Password must be at least 6 characters long.</small>
+            </div>
+            <div class="form-group mb-4">
+              <label for="role" class="form-label">Select Role</label>
+              <select id="role" class="form-control shadow-sm" name="role" required>
+                <option value="">Select a role</option>
+                <option value="student">Student</option>
+                <option value="faculty">Faculty</option>
+                <option value="admin">Admin</option>
+              </select>
+              <small class="form-text text-danger d-none" id="roleError">Please select a role.</small>
+            </div>
+            <button type="submit" class="btn btn-gradient w-100">Register</button>
+          </form>
+
+          <!-- Login Button -->
+          <div class="text-center mt-4">
+            <p>Already have an account?</p>
+            <a href="/login" class="btn btn-gradient btn-login">Login</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%- include('partials/footer') %>
+
+<!-- Custom CSS for Buttons -->
+<style>
+  body {
+    background-color: #e6f7ff; /* Light Blue Background */
+    font-family: 'Arial', sans-serif; /* Font Style */
+    color: #333;
+  }
+
+  .btn-gradient {
+    background: linear-gradient(45deg, #6a5acd, #00bfff);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    font-weight: bold;
+  }
+
+  .btn-gradient:hover {
+    background: linear-gradient(45deg, #00bfff, #6a5acd);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
+  }
+
+  .btn-login {
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    border-radius: 30px;
+    display: inline-block;
+  }
+
+  .gradient-text {
+    background: linear-gradient(90deg, #6a5acd, #00bfff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .animated-card {
+    animation: fadeIn 0.5s ease-in-out;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+</style>
+
+<script>
+  document.getElementById('registerForm').addEventListener('submit', function(e) {
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+    const role = document.getElementById('role').value;
+    let valid = true;
+
+    if (!validateEmail(email)) {
+      document.getElementById('emailError').classList.remove('d-none');
+      valid = false;
+    } else {
+      document.getElementById('emailError').classList.add('d-none');
+    }
+
+    if (password.length < 6) {
+      document.getElementById('passwordError').classList.remove('d-none');
+      valid = false;
+    } else {
+      document.getElementById('passwordError').classList.add('d-none');
+    }
+
+    if (!role) {
+      document.getElementById('roleError').classList.remove('d-none');
+      valid = false;
+    } else {
+      document.getElementById('roleError').classList.add('d-none');
+    }
+
+    if (!valid) e.preventDefault();
+  });
+
+  function validateEmail(email) {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(String(email).toLowerCase());
+  }
+</script>
