@@ -68,22 +68,22 @@ CREATE TABLE enrollments (
   enrollment_id INT AUTO_INCREMENT PRIMARY KEY,
   student_email VARCHAR(255),
   course_id INT,
-  FOREIGN KEY (student_email) REFERENCES student(email),
+  FOREIGN KEY (student_email) REFERENCES Student(email),
   FOREIGN KEY (course_id) REFERENCES course(course_id)
 );
 
-CREATE TABLE instructor_courses(
-    instructor_courses_id INT,
-    instructor_email VARCHAR(255),
-    course_id INT,
-    FOREIGN KEY (instructor_email) REFERENCES Instructor(email),
-    FOREIGN KEY (course_id) REFERENCES course(course_id)
-);
+ CREATE TABLE instructor_courses (
+         instructor_courses_id INT AUTO_INCREMENT PRIMARY KEY,
+         instructor_email VARCHAR(255),
+         course_id INT,
+         FOREIGN KEY (instructor_email) REFERENCES Instructor(email),
+         FOREIGN KEY (course_id) REFERENCES Course(course_id)
+     );
 
 CREATE TABLE student_courses(
     email VARCHAR(255),
     course_id INT,
-    FOREIGN KEY (email) REFERENCES student(email),
+    FOREIGN KEY (email) REFERENCES Student(email),
     FOREIGN KEY (course_id) REFERENCES course(course_id)
 
 );
