@@ -20,10 +20,10 @@ app.use(express.static("public"));
 const JWT_SECRET = "your_jwt_secret_key";
 
 var con = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "Mayur@4517",
-  database: "dbms1",
+ host: process.env.DB_HOST || 'localhost',
+  user: process.env.DB_USER || 'root',
+  password: process.env.DB_PASSWORD || 'rootpassword',
+  database: process.env.DB_NAME || 'mydatabase'
 });
 
 con.connect(function (err) {
