@@ -84,6 +84,6 @@ CREATE TABLE student_courses(
     email VARCHAR(255),
     course_id INT,
     FOREIGN KEY (email) REFERENCES Student(email),
-    FOREIGN KEY (course_id) REFERENCES course(course_id)
+    FOREIGN KEY (course_id) REFERENCES Course(course_id)
 
 );
